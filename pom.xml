@@ -71,6 +71,15 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <!--导入servlet依赖-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <!--编译  测试需要，运行时不需要-->
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <!--插件管理-->

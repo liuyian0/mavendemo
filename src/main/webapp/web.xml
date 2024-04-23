@@ -3,4 +3,36 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!--实现Servlet方式一：自定义类实现Servlet接口-->
+    <!--表示将当前Servlet类注册到tomcat中，告知tomcat有一个类要被访问-->
+    <servlet>
+        <servlet-name>servletDemo01</servlet-name>
+        <servlet-class>com.liu.day01.servlet.ServletDemo</servlet-class>
+        <!--load-on-startup标签可以让tomcat服务器启动就创建对应的servlet，标签文本值必须是整数(>=0)，数字越小，创建servlet的优先级越高-->
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!--配置要访问的Servlet类的映射路径-->
+    <servlet-mapping>
+        <servlet-name>servletDemo01</servlet-name>
+        <url-pattern>/servlet</url-pattern>
+    </servlet-mapping>
+    <!--方式二：自定义类继承GenericServlet类-->
+    <servlet>
+        <servlet-name>servletDemo02</servlet-name>
+        <servlet-class>com.liu.day01.servlet.GenericServletDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletDemo02</servlet-name>
+        <url-pattern>/genericServlet</url-pattern>
+    </servlet-mapping>
+    <!--方式三：自定义类继承HttpServlet类-->
+    <servlet>
+        <servlet-name>httpServlet</servlet-name>
+        <servlet-class>com.liu.day01.servlet.HttpServletDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>httpServlet</servlet-name>
+        <url-pattern>/httpServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

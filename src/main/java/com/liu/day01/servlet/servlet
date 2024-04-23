@@ -1,0 +1,61 @@
+Servlet：Server Applet服务器端的程序，用来处理客户端请求，相应给浏览器的动态web资源
+
+Servlet作用：
+1.接收客户端的请求
+2.处理业务逻辑
+3.相应给浏览器客户端
+
+实现servlet方式：
+一、自定义类实现Servlet接口  步骤：
+1.创建web项目
+2.导入Servlet依赖
+3.在创建的web项目中自定义类实现Servlet接口
+4.在自定义类中实现Servlet接口中所有的抽象方法
+5.在实现Servlet接口的service方法中书写代码处理业务逻辑
+6.在web项目的核心配置文件web.xml中配置访问servlet的路径
+7.启动Tomcat
+8.在浏览器中访问servlet类
+
+二、自定义类继承GenericServlet（只要重写service方法）  步骤：
+1.自定义类继承GenericServlet
+2.在子类中重写service方法，处理业务逻辑
+3.在web.xml中进行映射路径的配置
+4.在浏览器客户端访问servlet类
+
+推荐 三、自定义类继承HttpServlet（掌握）  步骤：
+1.自定义类继承HttpServlet
+2.在子类中根据不同的请求方式重写请求方式的方法get-doGet方法，post-doPost请求
+3.在方法体中书写处理业务逻辑的代码
+4.在web.xml中进行配置
+5.浏览客户端访问servlet
+
+ctrl+alt+u: 查看一个类的继承结构图
+ctrl+h: 这个类的简化版继承结构
+
+500服务器错误
+404找不到资源
+405不重写doGet/doPost方法，父类的doGet/doPost方法就会被执行，并给浏览器错误状态码405
+
+1.一个servlet映射一个url
+<servlet>
+    <servlet-name>servletDemo01</servlet-name>
+    <servlet-class>com.liu.day01.servlet.ServletDemo</servlet-class>
+    <!--load-on-startup标签可以让tomcat服务器启动就创建对应的servlet，标签文本值必须是整数(>=0)，数字越小，创建servlet的优先级越高-->
+    <load-on-startup>2</load-on-startup>
+</servlet>
+<!--配置要访问的Servlet类的映射路径-->
+<servlet-mapping>
+    <servlet-name>servletDemo01</servlet-name>
+    <url-pattern>/servlet01</url-pattern>
+</servlet-mapping>
+2.一个servlet映射多个url
+...
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>servletDemo01</servlet-name>
+    <url-pattern>/servlet02</url-pattern>
+</servlet-mapping>
+可以用不同的路径访问同一servlet类
+
+注解的方式添加映射路径
+@WebServlet({"/httpServlet01","/httpServlet02"})
