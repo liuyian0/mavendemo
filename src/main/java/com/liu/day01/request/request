@@ -1,0 +1,5 @@
+request请求转发
+浏览器发送请求给服务器，服务器中的资源A接收到请求，A处理完成后将请求发给资源B，B处理完成后将结果响应给浏览器
+A->B的过程就叫做请求转发
+例如：
+request.getRequestDispatcher("/requestDemo02").forward(request,response);
