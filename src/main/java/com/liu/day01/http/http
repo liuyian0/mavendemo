@@ -29,6 +29,7 @@ Demo02Servlet
 2.获取请求头数据（key:value）
 例如：User-Agent:Mozilla/5.0 Chrome/91.0.4472.106
 String getHeader(String name)参数name书写的是请求体冒号左边的内容User-Agent
+Demo03Servlet
 
 3.获取请求体数据
 get请求没有请求体，所以需求变更为post请求
@@ -36,6 +37,14 @@ get请求没有请求体，所以需求变更为post请求
 Request提供了两种方式获取其中的数据
 获取字节输入流 ServletInputStream getInputStream()
 获取字符输入流 BufferedReader getReader()
+Demo04Servlet
+
+🔺🔺🔺获取请求参数的通用方法
+Get方式：String getQueryString()
+Post方式：BufferedReader getReader()
+Demo05Servlret
+
+
 
 
 
