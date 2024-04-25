@@ -3,3 +3,10 @@ Response重定向(服务器外部的一种资源跳转方式)
 2.但是无法处理该请求，就会给浏览器响应一个302的状态码和location的一个访问资源B的路径
 3.浏览器接收到302状态码就会重新发送请求到location对应的访问地址去访问资源B
 4.资源B接收到请求后进行处理并最终给浏览器响应结果
+
+response响应字符数据
+        response.setContentType("text/html;charset=utf-8");
+        //1.获取字符输入流
+        PrintWriter writer = response.getWriter();
+        writer.write("aaa刘");
+response响应字节数据
