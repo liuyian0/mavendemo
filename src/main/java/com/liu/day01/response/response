@@ -10,3 +10,8 @@ response响应字符数据
         PrintWriter writer = response.getWriter();
         writer.write("aaa刘");
 response响应字节数据
+对于流的copy比较麻烦，可以使用别人提供好的方法来简化代码
+步骤：
+1.pom.xml中添加依赖commons-io
+2.调用工具类方法IOUtils.copy(fis,os);
+

@@ -79,7 +79,12 @@
             <!--编译  测试需要，运行时不需要-->
             <scope>provided</scope>
         </dependency>
-
+        <!--导入别人的方法来简化流的copy-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
 
     <!--插件管理-->
