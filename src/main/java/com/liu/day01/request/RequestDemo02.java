@@ -11,6 +11,11 @@ import java.io.IOException;
 public class RequestDemo02 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("requestDemo02...");
+        //响应给浏览器的数据
+        response.getWriter().print("hello,response");
+        //获取数据
+        Object msg = request.getAttribute("msg");
+        System.out.println("msg = " + msg);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -12,6 +12,8 @@ import java.io.IOException;
 public class RequestDemo01 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("requestDemo01...");
+        //存储数据
+        request.setAttribute("msg","hello");
         //请求转发
         request.getRequestDispatcher("/requestDemo02").forward(request,response);
     }

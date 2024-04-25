@@ -3,3 +3,13 @@ request请求转发
 A->B的过程就叫做请求转发
 例如：
 request.getRequestDispatcher("/requestDemo02").forward(request,response);
+
+请求转发资源间共享数据常用方法
+（请求转发时，A把数据传递B）
+1.void setAttribute(String name,Object o);存储数据到request域中
+2.object getAttribute(String name);根据key获取值
+3.void removeAttribute(String name);根据key删除该键值对
+直接访问B，数据输出为null
+
+request.getParameter("username");获取的是username的值(来自浏览器的数据)
+request.getAttribute(String name);获取的是request.setAttribute(String name,Object obj)的数据obj(服务器中的代码)
